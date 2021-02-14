@@ -14,7 +14,8 @@
 .ListWrapper{
   display: flex;
   flex-direction: column;
-  width: 70vw
+  width: 80vw;
+  padding: 160px;
 }
 
 .Wrapper{
@@ -22,5 +23,31 @@
   height: 100vh;
   justify-content: center;
   display: flex;
-  padding: 32px;
+  background-color: #f0f2f5;
+  overflow: scroll;
+}
+
+.ListItemWrapper{
+  background: #fff;
+  padding: 24px;
+  margin: 32px;
+}
+
+.ListItemTitleWrapper{
+  padding-bottom: 8px;
+}
+
+.Link{
+  color: #0f4eff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.ant-btn-link{
+  color: #0f4eff !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+}
+
+.ButtonWrapper{
+  padding-left: 24px;
 }

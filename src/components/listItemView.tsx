@@ -1,18 +1,13 @@
 import * as React from 'react'
-import { List, Typography } from 'antd';
-import { Link } from "react-router-dom";
+import { Typography } from 'antd';
+import { Spin } from 'antd';
 
 import { getListItemsData } from '../getters/getListItemsData'
 import { useGetData } from '../hooks/useGetData'
-import { Spin } from 'antd';
+import {Item} from './item'
 import '../App.css'
 
 const { Title } = Typography
-
-interface ListItemView {
-  listItems: any
-}
-
 
 export const ListItemView = () => {
   const { data, loader } = useGetData('https://inspirehep.net/api/literature')
@@ -23,20 +18,13 @@ export const ListItemView = () => {
       <Spin tip="Loading..." />
     </div> :
       <div className="ListWrapper">
-        <Title className="TitleWrapper">{`Total Results: ${list.length}`}</Title>
-        <List
-          itemLayout="horizontal"
-          dataSource={list}
-          renderItem={item => (
-            <List.Item>
-              <List.Item.Meta
-                title={<Link 
-                  to={`/item/${item.controlNumber}`}>{item.title}</Link>}
-                description={item.abstracts}
-              />
-            </List.Item>
-          )}
-        />
+        <Title
+          level={4} className="TitleWrapper">{`Total Results: ${list.length}`}</Title>
+        {
+          list.map(item => (
+           <Item item={item}/>
+          ))
+        }
       </div>}
   </div>
 }

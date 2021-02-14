@@ -23,7 +23,7 @@ export const ListItemView = () => {
       <Spin tip="Loading..." />
     </div> :
       <div className="ListWrapper">
-        <Title className="TitleWrapper">{`Totlar Results: ${list.length}`}</Title>
+        <Title className="TitleWrapper">{`Total Results: ${list.length}`}</Title>
         <List
           itemLayout="horizontal"
           dataSource={list}

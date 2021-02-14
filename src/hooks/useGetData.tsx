@@ -23,7 +23,7 @@ export interface ListItemPRops {
 }
 
 export const useGetData = (url: string) => {
-  const [data, setData] = useState<ListDataProps | ListItemPRops>()
+  const [data, setData] = useState<(ListDataProps & ListItemPRops) | any>()
   const [loader, setLoader] = useState(true)
 
   useEffect(() => {

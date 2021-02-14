@@ -10,6 +10,9 @@ interface ItemViewProps {
 }
 
 export const ListItem = ({ item }: ItemViewProps) => {
-    return <div> the first item </div>
+    return <div>
+        <div>{item.title}</div>
+        <div>{item.abstracts}</div>
+    </div>
 
 }

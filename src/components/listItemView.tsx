@@ -1,4 +1,7 @@
 import * as React from 'react'
+import { getListItemsFromData } from '../getters/getListItemsFromData'
+
+import { useGetData } from '../hooks/useGetData'
 import { ListItem } from './litsItem'
 
 interface ListItemView {
@@ -6,7 +9,12 @@ interface ListItemView {
 }
 
 export const ListItemView = () => {
+    const { data } = useGetData('https://inspirehep.net/api/literature')
+    const list = getListItemsFromData(data)
+
     return <div>
-        <ListItem item={{} as any} />
+        {list.map(item => (
+            <ListItem item={item} />
+        ))}
     </div>
 }
